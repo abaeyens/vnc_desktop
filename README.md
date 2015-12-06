@@ -19,7 +19,8 @@ when asked, reboot the Raspberry Pi.
 
 
 ## FAQ
+can't find the RPi IP address
+* it's visible in the wifi/connection utility.
+
 authentication on client computer fails
 * set other password on Raspberry Pi with `vncpasswd` and reboot.
-
-
