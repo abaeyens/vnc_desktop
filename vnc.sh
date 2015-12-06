@@ -1,2 +1,2 @@
 !/bin/sh
-vncserver :0 -geometry 1920x1080 -depth 24 -dpi 96
+vncserver :0 -geometry 1280x600 -depth 24
