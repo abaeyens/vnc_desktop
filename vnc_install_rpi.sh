@@ -37,5 +37,5 @@
     sudo update-rc.d vncboot defaults
      
     echo "Installation finished!"
-    echo "Please reboot the computer"
+    echo "Please reboot your Raspberry Pi"
 
