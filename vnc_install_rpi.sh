@@ -36,6 +36,10 @@
     #sudo update-rc.d /etc/init.d/vncboot defaults
     sudo update-rc.d vncboot defaults
      
+    echo "Configuring password settings for remote desktop..."
+    echo "Follow instructions."
+    sudo vncpasswd
+    
     echo "Installation finished!"
-    echo "Please reboot your Raspberry Pi"
+    echo "Please reboot your Raspberry Pi."
 
