@@ -25,7 +25,7 @@ case "$1" in
 
  stop)
   echo "Stopping VNC Server"
-  /usr/bin/vncserver -kill :0
+  /usr/bin/vncserver -kill :1
   ;;
 
  *)
