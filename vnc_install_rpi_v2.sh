@@ -6,7 +6,7 @@ HOME=/home/pi
 
 export USER HOME
 
-case "$1" in
+if "$1" in
  full)
   echo "Full"
   ;;
@@ -21,4 +21,4 @@ case "$1" in
   echo "Usage: ./vnc_install_rpi_v2 {full|on|off}"
   exit 1
   ;;
-esac
+fi
