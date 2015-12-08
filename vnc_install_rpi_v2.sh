@@ -6,19 +6,72 @@ HOME=/home/pi
 
 export USER HOME
 
-if "$1" in
+case "$1" in
  full)
-  echo "Full"
+  echo "Full installation"
+  echo "Updating programs on your Raspberry Pi..."
+  sudo apt-get -y update && sudo apt-get -y upgrade
+  
+  echo "Starting install of remote desktop server..."
+  echo "Install of package tightvncserver"
+  sudo apt-get -y install tightvncserver
+  echo "Package tightvncserver automatically installed."
+  
+  echo "Cleaning up old files..."
+  rm vncboot
+  rm vnc.sh
+  rm close_vnc.sh
+  
+  echo "Downloading files..."
+  wget https://raw.githubusercontent.com/abaeyens/vnc_desktop/master/vncboot
+  wget https://raw.githubusercontent.com/abaeyens/vnc_desktop/master/vnc.sh
+  wget https://raw.githubusercontent.com/abaeyens/vnc_desktop/master/close_vnc.sh
+  
+  echo "Making files vnc.sh and close_vnc.sh executable..."
+  sudo chmod +x vnc.sh
+  sudo chmod +x close_vnc.sh
+  
+  echo "Copying file vncboot..."
+  cd /etc/init.d
+  sudo cp /home/pi/vncboot ./
+  
+  echo "Making file vncboot executable..."
+  sudo chmod 755 vncboot
+  
+  echo "update-rc.d settings..."
+  #sudo update-rc.d /etc/init.d/vncboot defaults
+  sudo update-rc.d vncboot defaults
+  
+  echo "Configuring password settings for remote desktop..."
+  echo "Follow instructions."
+  sudo vncpasswd
+  
+  echo "Installation finished!"
+  echo "Please reboot your Raspberry Pi."
   ;;
-
  on)
-  echo "On"
+  echo "Enabling startup at boot."
+  cd /etc/init.d
+  sudo rm vncboot
+  echo "Finished"
   ;;
- off)
-  echo "Off"
+ of)
+  echo "Disabling startup at boot."
+  echo "Copying file vncboot..."
+  cd /etc/init.d
+  sudo cp /home/pi/vncboot ./
+  
+  echo "Making file vncboot executable..."
+  sudo chmod 755 vncboot
+  
+  echo "update-rc.d settings..."
+  #sudo update-rc.d /etc/init.d/vncboot defaults
+  sudo update-rc.d vncboot defaults
+  echo "Finished"
   ;;
  *)
   echo "Usage: ./vnc_install_rpi_v2 {full|on|off}"
   exit 1
   ;;
-fi
+esac
+
