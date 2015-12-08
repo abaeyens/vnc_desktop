@@ -1,6 +1,6 @@
 # vnc_desktop
 
-This script installs a VNC remote desktop host on you Raspberry Pi. Display 1 is started at boot, so the address will be `<yourRPiIPaddress>:1`. It's not necessary to have the RPi log in automatically or to have the graphical desktop running. The script first updates and upgrades your RPi to make sure all programs are the newest versions and will then start the install of tightvncserver and at last write the configuration files.
+This script installs a VNC remote desktop host on you Raspberry Pi. Display 1 is started at boot, so the address will be `<yourRPiIPaddress>:1`. It's not necessary to have the RPi log in automatically or to have the graphical desktop running. The script first updates and upgrades your RPi to make sure all programs are the newest versions and will then start the install of tightvncserver and finally write the configuration files.
 This installation script is passive and thus does not response to errors.
 The files vnc.sh and close_vnc.sh can be used to start and stop VNC.
 
@@ -28,7 +28,8 @@ When asked, reboot the Raspberry Pi.
 
 ## FAQ
 can't find the RPi IP address
-* it's visible in the wifi/connection utility.
+* it's visible in the wifi/connection utility
+* or, if not using the desktop, it's showed in one of the last lines written during the boot.
 
 authentication on client computer fails
-* set other password on Raspberry Pi with `vncpasswd` and reboot.
+* set another password on the Raspberry Pi with `vncpasswd` (in terminal) and reboot.
