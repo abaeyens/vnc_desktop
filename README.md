@@ -8,6 +8,8 @@ On the Raspberry Pi site there's a [detailed article](https://www.raspberrypi.or
 
 The script can be run in a terminal emulator or in command line.
 
+`vnc_install_rpi_v2.sh` is under development and may not work properly.
+
 ### Required:
 * a RPi with internet connection and a keyboard
 * a client computer connected to the RPi via network.
