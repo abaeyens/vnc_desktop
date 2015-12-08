@@ -49,14 +49,14 @@ case "$1" in
   echo "Installation finished!"
   echo "Please reboot your Raspberry Pi."
   ;;
- on)
-  echo "Enabling startup at boot."
+ off)
+  echo "Disabling startup at boot."
   cd /etc/init.d
   sudo rm vncboot
   echo "Finished"
   ;;
- of)
-  echo "Disabling startup at boot."
+ on)
+  echo "Enabling startup at boot."
   echo "Copying file vncboot..."
   cd /etc/init.d
   sudo cp /home/pi/vncboot ./
