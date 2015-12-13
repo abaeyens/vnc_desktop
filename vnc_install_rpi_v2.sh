@@ -1,6 +1,11 @@
 #!/bin/bash
 # script to install vnc stuff
 
+# V1.5 - sunday 13/12/2015
+# Written by Arne Baeyens, contains commands from the remote desktop installation tutorial on the raspberrypi.org website.
+# Use this code at your own risk. I am not responsible for any damage.
+# for help, please visit https://github.com/abaeyens/vnc_desktop.
+
 USER=pi
 HOME=/home/pi
 
@@ -47,7 +52,7 @@ case "$1" in
   sudo vncpasswd
   
   echo "Installation finished!"
-  echo "Please reboot your Raspberry Pi."
+  echo "Please reboot your Raspberry Pi to activate the desktop."
   ;;
  off)
   echo "Disabling startup at boot."
@@ -71,6 +76,10 @@ case "$1" in
   ;;
  *)
   echo "Usage: ./vnc_install_rpi_v2 {full|on|off}"
+  echo " 'full' => Full installation and enable startup at boot."
+  echo " 'on' => Enable startup at boot."
+  echo " 'off' => Disable startup at boot."
+  echo "For more help, please visit https://github.com/abaeyens/vnc_desktop."
   exit 1
   ;;
 esac
