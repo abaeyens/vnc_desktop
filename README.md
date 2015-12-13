@@ -33,11 +33,13 @@ After little more than one minute the RPi should have booted and it should be po
 
 
 ## FAQ
-how to stop VNC server when already running?
+How to stop VNC server when already running?
 * do `sudo /etc/init.d/vncboot` or do `sudo ./stopvnc.sh`.
-can't find the RPi IP address
+Can't find the RPi IP address
 * it's visible in the wifi/connection utility
 * or, if not using the desktop, it's showed in one of the last lines written during the boot.
 
-authentication on client computer fails / I want a new password
+Authentication on client computer fails / I want a new password
 * set another password on the Raspberry Pi with `vncpasswd` (in terminal) and reboot.
+
+If you have other problems, please post an issue.
